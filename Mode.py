@@ -24,11 +24,11 @@ modeDataForRange = {
 
 for height, occurence in data.items():
     if 50 < float(height) < 60:
-        modeDataForRange['50-60'] + occurence
+        modeDataForRange['50-60'] += occurence
     elif 60 < float(height) < 70:
-        modeDataForRange['60-70'] + occurence
+        modeDataForRange['60-70'] += occurence
     elif 70 < float(height) < 80:
-        modeDataForRange['70-80'] + occurence
+        modeDataForRange['70-80'] += occurence
 
 mode_range, mode_occurence = 0, 0
 
@@ -37,6 +37,5 @@ for range, occurence in modeDataForRange.items():
         mode_range, mode_occurence = [
             int(range.split('-')[0]), int(range.split('-')[1])], occurence
 
-#mode = (mode_range[0] + mode_range[1]) / 2
-#print("The mode value of the data is: " + str(mode))
-print(mode_range)
+mode = (mode_range[0] + mode_range[1]) / 2
+print("The mode value of the data is: " + str(mode))
